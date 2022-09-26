@@ -9,14 +9,16 @@ ThemeData lightTheme = ThemeData(
   scaffoldBackgroundColor: backgroundColor,
   appBarTheme: const AppBarTheme(
     elevation: 0.0,
-    iconTheme: IconThemeData(color: Colors.black,),
+    iconTheme: IconThemeData(
+      color: Colors.black,
+    ),
     backgroundColor: backgroundColor,
     systemOverlayStyle: SystemUiOverlayStyle(
       statusBarColor: backgroundColor,
       statusBarIconBrightness: Brightness.dark,
     ),
   ),
-  textTheme:  const TextTheme(
+  textTheme: const TextTheme(
     titleLarge: TextStyle(
       fontFamily: 'Josefin',
       fontSize: 30.0,
@@ -29,7 +31,13 @@ ThemeData lightTheme = ThemeData(
       fontWeight: FontWeight.w500,
       color: Colors.black,
     ),
-    bodySmall:  TextStyle(
+    bodyMedium: TextStyle(
+      fontFamily: 'Josefin',
+      fontSize: 20.0,
+      fontWeight: FontWeight.w400,
+      color: Colors.black,
+    ),
+    bodySmall: TextStyle(
       fontFamily: 'Josefin',
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
