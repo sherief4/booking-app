@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:booking_app/core/themes/light.dart';
 import 'package:booking_app/core/utils/constants/constants.dart';
 import 'package:booking_app/core/utils/constants/size_config.dart';
@@ -24,23 +23,25 @@ class _BoardingBodyState extends State<BoardingBody> {
   @override
   void initState() {
     super.initState();
-    Timer.periodic(
-        const Duration(
-          seconds: 4,
-        ), (Timer timer) {
-      if (currentIndex < 2) {
-        currentIndex++;
-      } else {
-        currentIndex = 0;
-      }
-      pageController.animateToPage(
-        currentIndex,
-        duration: const Duration(
-          milliseconds: 500,
-        ),
-        curve: Curves.easeIn,
-      );
-    });
+    if(pageController.hasClients){
+      Timer.periodic(
+          const Duration(
+            seconds: 4,
+          ), (Timer timer) {
+        if (currentIndex < 2) {
+          currentIndex++;
+        } else {
+          currentIndex = 0;
+        }
+        pageController.animateToPage(
+          currentIndex,
+          duration: const Duration(
+            milliseconds: 500,
+          ),
+          curve: Curves.easeIn,
+        );
+      });
+    }
   }
 
   @override

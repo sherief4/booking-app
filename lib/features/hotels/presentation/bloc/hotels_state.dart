@@ -10,11 +10,7 @@ abstract class HotelsState extends Equatable {
 class HotelsInitial extends HotelsState {}
 
 class HotelsChangeBottomNavState extends HotelsState {
-  const HotelsChangeBottomNavState({
-    required this.index,
-  });
-
-  final int index;
+  const HotelsChangeBottomNavState();
 
   @override
   List<Object> get props => [];

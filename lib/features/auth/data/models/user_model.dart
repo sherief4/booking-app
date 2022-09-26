@@ -20,7 +20,7 @@ class UserModel extends User {
       id: json['id'],
       name: json['name'],
       email: json['email'],
-      image: json['image'] ?? '' ,
+      image: json['image'] ?? 'https://cdn-icons-png.flaticon.com/512/1077/1077063.png?w=740&t=st=1664196180~exp=1664196780~hmac=12c8cfe8b75d3433693f253436806b4db495998299560a2ef6ee9afbc4ff1400' ,
       token: json['api_token'],
     );
   }
@@ -32,6 +32,7 @@ class UserModel extends User {
       'name': name,
       'email': email,
       'image': image,
+      'api_token' : token,
     };
   }
 }
