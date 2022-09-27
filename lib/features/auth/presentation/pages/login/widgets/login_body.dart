@@ -4,7 +4,6 @@ import 'package:booking_app/core/widgets/default_button.dart';
 import 'package:booking_app/core/widgets/default_input_text_form_field.dart';
 import 'package:booking_app/core/widgets/vertical_space.dart';
 import 'package:booking_app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:booking_app/features/hotels/presentation/home_page.dart';
 import 'package:booking_app/features/hotels/presentation/layout/hotels_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +13,9 @@ class LoginBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    final GlobalKey < FormState>formKey = GlobalKey<FormState>();
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is AuthSuccessState) {
@@ -35,9 +36,7 @@ class LoginBody extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        final formKey = GlobalKey<FormState>();
-      final TextEditingController emailController = TextEditingController();
-      final TextEditingController passwordController = TextEditingController();
+
         return Padding(
           padding: const EdgeInsets.all(
             16.0,

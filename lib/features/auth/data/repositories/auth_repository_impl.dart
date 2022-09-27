@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:booking_app/core/errors/exceptions.dart';
 import 'package:booking_app/core/errors/failures.dart';
 import 'package:booking_app/core/network/network_info.dart';
@@ -83,7 +85,7 @@ class AuthRepositoryImpl extends AuthRepository {
       {required String email,
       required String token,
       required String name,
-      required String image}) async {
+      required File image}) async {
     if (await networkInfo.isConnected) {
       final data = await remoteDatasource.updateProfile(
           email: email, token: token, name: name, image: image);

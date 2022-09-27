@@ -8,7 +8,6 @@ part 'hotels_state.dart';
 class HotelsBloc extends Bloc<HotelsEvent, HotelsState> {
 
   static HotelsBloc get(context) => BlocProvider.of<HotelsBloc>(context);
-  int curIndex = 0 ;
 
 
   HotelsBloc() : super(HotelsInitial()) {

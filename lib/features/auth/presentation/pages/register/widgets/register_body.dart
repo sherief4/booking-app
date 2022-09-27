@@ -14,6 +14,12 @@ class RegisterBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
+    final TextEditingController nameController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+    final TextEditingController passwordConfirmController =
+        TextEditingController();
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is AuthSuccessState) {
@@ -34,13 +40,6 @@ class RegisterBody extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        final formKey = GlobalKey<FormState>();
-        final TextEditingController nameController = TextEditingController();
-        final TextEditingController emailController = TextEditingController();
-        final TextEditingController passwordController =
-            TextEditingController();
-        final TextEditingController passwordConfirmController =
-            TextEditingController();
         return Padding(
           padding: const EdgeInsets.all(
             16.0,
@@ -57,6 +56,11 @@ class RegisterBody extends StatelessWidget {
                     'Register',
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
+                  if (state is AuthLoadingState)
+                    const VerticalSpace(
+                      1.0,
+                    ),
+                  if (state is AuthLoadingState) const LinearProgressIndicator(),
                   const VerticalSpace(
                     4.0,
                   ),
