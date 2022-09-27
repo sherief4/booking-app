@@ -24,7 +24,7 @@ Future<void> init() async {
         registerUseCase: sl(),
         updateProfileUseCase: sl(),
         getProfileInfoUseCase: sl(),
-
+    changePasswordUseCase: sl()
   ));
   sl.registerFactory(() => HotelsBloc());
 
@@ -34,6 +34,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => LoginUseCase(repository: sl()));
   sl.registerLazySingleton(() => GetProfileInfoUseCase(repository: sl()));
   sl.registerLazySingleton(() => ChangePasswordUseCase(repository: sl()));
+
 
   // Repositories
   sl.registerLazySingleton<AuthRepository>(

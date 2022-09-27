@@ -9,12 +9,14 @@ class DefaultTextFormField extends StatelessWidget {
     required this.controller,
     this.validator,
     this.isPassword,
+    this.keyboardType,
   }) : super(key: key);
   final String title;
   final String hintText;
   final String? Function(String?)? validator;
   final bool? isPassword;
   final TextEditingController controller;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +40,7 @@ class DefaultTextFormField extends StatelessWidget {
           child: TextFormField(
             controller: controller,
             validator: validator,
+            keyboardType: keyboardType,
             style: const TextStyle(
               color: Colors.black,
               fontSize: 16.0,
@@ -64,6 +67,7 @@ class DefaultTextFormField extends StatelessWidget {
                   style: BorderStyle.none,
                 ),
               ),
+
               filled: true,
             ),
           ),

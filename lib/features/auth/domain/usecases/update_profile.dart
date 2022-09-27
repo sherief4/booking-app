@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:booking_app/core/errors/failures.dart';
 import 'package:booking_app/features/auth/domain/entities/data.dart';
 import 'package:booking_app/features/auth/domain/repositories/auth_repository.dart';
@@ -9,7 +10,7 @@ class UpdateProfileUseCase {
   final AuthRepository repository;
 
   Future<Either<Failure, Data>> call({
-    required String image,
+    required File image,
     required String email,
     required String name,
     required String token,

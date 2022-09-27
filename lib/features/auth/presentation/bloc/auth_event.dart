@@ -46,3 +46,55 @@ class GetProfileEvent extends AuthEvent {
   @override
   List<Object> get props => [];
 }
+
+class ChooseProfileImageEvent extends AuthEvent {
+  const ChooseProfileImageEvent({required this.image});
+
+  final File image;
+
+  @override
+  List<Object> get props => [image];
+}
+
+class UpdateProfileEvent extends AuthEvent {
+  const UpdateProfileEvent({
+    required this.token,
+    required this.email,
+    required this.name,
+    required this.image,
+  });
+
+  final String token;
+
+  final String email;
+
+  final String name;
+  final File image;
+
+  @override
+  List<Object> get props => [token, name, email, image];
+}
+
+class ChangePasswordEvent extends AuthEvent {
+  const ChangePasswordEvent({
+    required this.token,
+    required this.email,
+    required this.newPassword,
+    required this.newPasswordConfirm,
+  });
+
+  final String token;
+
+  final String email;
+
+  final String newPassword;
+  final String newPasswordConfirm;
+
+  @override
+  List<Object> get props => [
+        token,
+        email,
+        newPassword,
+        newPasswordConfirm,
+      ];
+}

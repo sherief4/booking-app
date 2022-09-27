@@ -3,6 +3,7 @@ import 'package:booking_app/core/errors/exceptions.dart';
 import 'package:booking_app/core/network/end_points.dart';
 import 'package:booking_app/features/auth/data/models/data_model.dart';
 import 'package:dartz/dartz.dart';
+import 'dart:io';
 import 'package:http/http.dart' as http;
 
 abstract class RemoteDatasource {
@@ -23,7 +24,7 @@ abstract class RemoteDatasource {
     required String email,
     required String token,
     required String name,
-    required String image,
+    required File image,
   });
 
   Future<Unit> changePassword({
@@ -87,7 +88,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
       {required String password,
       required String passwordConfirm,
       required String token,
-      required String email}) async {
+      required String email,}) async {
     final response = await client.post(
       Uri.parse('$BASE_URL$VERSION$PASSWORD_CHANGE'),
       body: {
@@ -110,7 +111,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
     required String email,
     required String token,
     required String name,
-    required String image,
+    required File image,
   }) async {
     final response = await client.post(
         Uri.parse(

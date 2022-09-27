@@ -1,4 +1,4 @@
-import 'package:booking_app/features/auth/presentation/pages/profile/widgets/profile_body.dart';
+import 'package:booking_app/features/auth/presentation/pages/profile/pages/profile/widgets/profile_body.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -7,7 +7,9 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(child: ProfileBody()),
+      body: SafeArea(
+        child: ProfileBody(),
+      ),
     );
   }
 }

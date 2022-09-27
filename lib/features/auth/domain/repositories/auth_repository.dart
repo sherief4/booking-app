@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:booking_app/core/errors/failures.dart';
 import 'package:booking_app/features/auth/domain/entities/data.dart';
 import 'package:dartz/dartz.dart';
@@ -21,7 +22,7 @@ abstract class AuthRepository {
     required String email,
     required String token,
     required String name,
-    required String image ,
+    required File image ,
   });
 
   Future<Either<Failure, Unit>> changePassword({

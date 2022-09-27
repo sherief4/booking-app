@@ -18,7 +18,7 @@ class TileButton extends StatelessWidget {
       padding: const EdgeInsets.all(4.0,),
       child: Column(
         children: [
-          InkWell(
+          GestureDetector(
             onTap: onTap,
             child: Row(
               children: [
