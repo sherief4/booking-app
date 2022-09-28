@@ -4,7 +4,7 @@ import 'package:booking_app/core/widgets/default_button.dart';
 import 'package:booking_app/core/widgets/default_input_text_form_field.dart';
 import 'package:booking_app/core/widgets/vertical_space.dart';
 import 'package:booking_app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:booking_app/features/hotels/presentation/layout/hotels_layout.dart';
+import 'package:booking_app/features/hotels/presentation/layouts/hotels_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

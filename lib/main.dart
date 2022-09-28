@@ -21,8 +21,17 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (_) => di.sl<AuthBloc>()..add(const GetProfileEvent())),
-        BlocProvider(create: (_) => di.sl<HotelsBloc>()),
+          create: (_) => di.sl<AuthBloc>()
+            ..add(
+              const GetProfileEvent(),
+            ),
+        ),
+        BlocProvider(
+          create: (_) => di.sl<HotelsBloc>()
+            ..add(
+              const GetHotelsEvent(),
+            ),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -9,6 +9,11 @@ import 'package:booking_app/features/auth/domain/usecases/login.dart';
 import 'package:booking_app/features/auth/domain/usecases/register.dart';
 import 'package:booking_app/features/auth/domain/usecases/update_profile.dart';
 import 'package:booking_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:booking_app/features/hotels/data/datasources/hotels_local_data_source.dart';
+import 'package:booking_app/features/hotels/data/datasources/hotels_remote_datasource.dart';
+import 'package:booking_app/features/hotels/data/repositories/hotel_repository_impl.dart';
+import 'package:booking_app/features/hotels/domain/repositories/hotels_repository.dart';
+import 'package:booking_app/features/hotels/domain/usecases/get_hotels.dart';
 import 'package:booking_app/features/hotels/presentation/bloc/hotels_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
@@ -20,13 +25,12 @@ final sl = GetIt.instance;
 Future<void> init() async {
   //BloCs
   sl.registerFactory(() => AuthBloc(
-        loginUseCase: sl(),
-        registerUseCase: sl(),
-        updateProfileUseCase: sl(),
-        getProfileInfoUseCase: sl(),
-    changePasswordUseCase: sl()
-  ));
-  sl.registerFactory(() => HotelsBloc());
+      loginUseCase: sl(),
+      registerUseCase: sl(),
+      updateProfileUseCase: sl(),
+      getProfileInfoUseCase: sl(),
+      changePasswordUseCase: sl()));
+  sl.registerFactory(() => HotelsBloc(getHotelsUseCase: sl(),),);
 
   //Usecases
   sl.registerLazySingleton(() => UpdateProfileUseCase(repository: sl()));
@@ -34,7 +38,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => LoginUseCase(repository: sl()));
   sl.registerLazySingleton(() => GetProfileInfoUseCase(repository: sl()));
   sl.registerLazySingleton(() => ChangePasswordUseCase(repository: sl()));
-
+  sl.registerLazySingleton(() => GetHotelsUseCase(hotelsRepository: sl()));
 
   // Repositories
   sl.registerLazySingleton<AuthRepository>(
@@ -44,12 +48,18 @@ Future<void> init() async {
       networkInfo: sl(),
     ),
   );
+  sl.registerLazySingleton<HotelsRepository>(() => HotelsRepositoryImpl(
+      networkInfo: sl(), localDatasource: sl(), remoteDatasource: sl()));
 
   //Datasources
   sl.registerLazySingleton<RemoteDatasource>(
       () => RemoteDatasourceImpl(client: sl()));
   sl.registerLazySingleton<LocalDatasource>(
       () => LocalDatasourceImpl(sharedPreferences: sl()));
+  sl.registerLazySingleton<HotelsRemoteDatasource>(
+      () => HotelsRemoteDatasourceImpl(client: sl()));
+  sl.registerLazySingleton<HotelsLocalDatasource>(
+      () => HotelsLocalDatasourceImpl(sharedPreferences: sl()));
 
   //Network Info
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));

@@ -9,9 +9,21 @@ abstract class HotelsState extends Equatable {
 
 class HotelsInitial extends HotelsState {}
 
-class HotelsChangeBottomNavState extends HotelsState {
-  const HotelsChangeBottomNavState();
+class GetHotelsLoadingState extends HotelsState {}
 
+class GetHotelsSuccessState extends HotelsState {
+  const GetHotelsSuccessState({
+    required this.hotels,
+  });
+
+  final List<Hotel> hotels;
   @override
-  List<Object> get props => [];
+  List<Object> get props => [hotels];
+}
+
+class GetHotelsErrorState extends HotelsState{
+  const GetHotelsErrorState({required this.error});
+final String error;
+  @override
+  List<Object> get props => [error];
 }

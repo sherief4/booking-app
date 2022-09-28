@@ -14,18 +14,18 @@ class CustomPageView extends StatelessWidget {
       controller: pageController,
       children: const [
         PageViewItem(
-          image: 'assets/images/boarding_1.png',
+          image: 'assets/images/boarding/boarding_1.png',
           title: 'Plan your trips',
           subtitle: 'Book one of our unique hotels to \nescape the ordinary ones',
         ),
         PageViewItem(
-          image: 'assets/images/boarding_2.png',
+          image: 'assets/images/boarding/boarding_2.png',
           title: 'Find the best deals',
           subtitle:
               'Find deals from any season from cosy \ncountry hotels to city flats',
         ),
         PageViewItem(
-          image: 'assets/images/boarding_3.png',
+          image: 'assets/images/boarding/boarding_3.png',
           title: 'Best travelling all time',
           subtitle:
               'Find deals from any season from cosy \ncountry hotels to city flats',
