@@ -1,3 +1,4 @@
+import 'package:booking_app/features/hotels/presentation/pages/home/widgets/home_body.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -5,10 +6,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('This is Home'),
-      ),
+    return const Scaffold(
+      extendBodyBehindAppBar: true,
+      body: HomeBody(),
     );
   }
 }

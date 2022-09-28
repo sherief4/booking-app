@@ -12,7 +12,7 @@ class InviteFriendsBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset(
-          'assets/images/invite.png',
+          'assets/images/other/invite.png',
           height: SizeConfig.screenWidth! * 0.85,
         ),
         const VerticalSpace(

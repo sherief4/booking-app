@@ -7,10 +7,6 @@ abstract class HotelsEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class BottomNavChangeEvent extends HotelsEvent{
-const BottomNavChangeEvent({required this.index});
-  final int index;
-
-@override
-List<Object> get props => [index];
+class GetHotelsEvent extends HotelsEvent{
+  const GetHotelsEvent();
 }

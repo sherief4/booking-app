@@ -55,11 +55,7 @@ class HelpBody extends StatelessWidget {
             ),
           ),
         ),
-        SingleChildScrollView(
-          child: Column(
-            children: [],
-          ),
-        ),
+
       ],
     );
   }

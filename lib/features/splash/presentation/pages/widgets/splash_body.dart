@@ -1,6 +1,6 @@
 import 'package:booking_app/core/utils/constants/constants.dart';
 import 'package:booking_app/core/utils/constants/strings.dart';
-import 'package:booking_app/features/hotels/presentation/layout/hotels_layout.dart';
+import 'package:booking_app/features/hotels/presentation/layouts/hotels_layout.dart';
 import 'package:booking_app/features/on_boarding/presentation/pages/on_boarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
