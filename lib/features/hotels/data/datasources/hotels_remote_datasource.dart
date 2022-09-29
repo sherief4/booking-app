@@ -47,7 +47,7 @@ class HotelsRemoteDatasourceImpl implements HotelsRemoteDatasource {
       ),
     );
     if (response.statusCode == 200) {
-      final List decodedJson = json.decode(response.body) as List;
+      final List decodedJson = json.decode(response.body) ;
       final List<HotelModel> hotels =
           decodedJson.map<HotelModel>((e) => HotelModel.fromJson(e)).toList();
       return hotels;
