@@ -13,20 +13,17 @@ class HotelsListWidget extends StatelessWidget {
       builder: (context, state) {
         if (state is GetHotelsSuccessState) {
           return ListView.separated(
+            physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemBuilder: (context, index) {
               return HotelWidget(
-                hotelName: state.hotels[index].name!,
-                location: state.hotels[index].address!,
-                rate: state.hotels[index].rate!,
-                price: state.hotels[index].price!,
-                image: state.hotels[index].images![0],
+                hotel: state.data.hotels![index],
               );
             },
             separatorBuilder: (context, index) {
               return const VerticalSpace(2.0,);
             },
-            itemCount: state.hotels.length,
+            itemCount: state.data.hotels!.length,
           );
         }
         return const SizedBox();

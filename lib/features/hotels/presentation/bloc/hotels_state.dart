@@ -13,12 +13,12 @@ class GetHotelsLoadingState extends HotelsState {}
 
 class GetHotelsSuccessState extends HotelsState {
   const GetHotelsSuccessState({
-    required this.hotels,
+    required this.data,
   });
 
-  final List<Hotel> hotels;
+  final HotelData data;
   @override
-  List<Object> get props => [hotels];
+  List<Object> get props => [data];
 }
 
 class GetHotelsErrorState extends HotelsState{

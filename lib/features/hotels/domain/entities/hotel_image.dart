@@ -1,18 +1,18 @@
 import 'package:equatable/equatable.dart';
 
-class Facility extends Equatable {
-  const Facility({
+class HotelImage extends Equatable {
+  const HotelImage({
     this.id,
     this.hotelId,
-    this.facilityId,
+    this.image,
   });
 
   final int? id;
   final String? hotelId;
-  final String? facilityId;
+  final String? image;
 
   Map<String, dynamic> toJson() => {};
 
   @override
-  List<Object?> get props => [id, hotelId, facilityId];
+  List<Object?> get props => [id, hotelId, image];
 }

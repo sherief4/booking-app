@@ -7,10 +7,10 @@ class CreateBookingUseCase {
 
   final HotelsRepository hotelsRepository;
 
-  Future<Either<Failure, Unit>> call({
-    required String token,
-    required int hotelId,
-  }) async {
-    return await hotelsRepository.createBooking(token: token, hotelId: hotelId);
-  }
+  // Future<Either<Failure, Unit>> call({
+  //   required String token,
+  //   required int hotelId,
+  // }) async {
+  //   return await hotelsRepository.createBooking(token: token, hotelId: hotelId);
+  // }
 }

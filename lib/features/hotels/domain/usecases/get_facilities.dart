@@ -7,8 +7,8 @@ class GetFacilitiesUseCase {
   const GetFacilitiesUseCase({required this.hotelsRepository});
   final HotelsRepository hotelsRepository;
 
-  Future<Either<Failure , List<Facility>>> call()async{
-    return await hotelsRepository.getFacilities();
-  }
+  // Future<Either<Failure , List<Facility>>> call()async{
+  //   return await hotelsRepository.getFacilities();
+  // }
 
 }
