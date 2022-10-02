@@ -1,22 +1,31 @@
+import 'package:booking_app/features/hotels/data/models/hotel_image_model.dart';
 import 'package:booking_app/features/hotels/domain/entities/facility.dart';
 import 'package:equatable/equatable.dart';
 
 class Hotel extends Equatable {
   const Hotel({
-    this.id, this.name, this.description, this.price, this.address,
-    this.latitude, this.longitude, this.rate, this.images, this.facilities
-});
+    this.id,
+    this.name,
+    this.description,
+    this.price,
+    this.address,
+    this.longitude,
+    this.latitude,
+    this.rate,
+    this.hotelImages,
+    this.hotelFacilities,
+  });
 
   final int? id;
   final String? name;
   final String? description;
-  final int? price;
+  final String? price;
   final String? address;
-  final double? latitude;
-  final double? longitude;
-  final double? rate;
-  final List<String>? images;
-  final List<Facility>? facilities;
+  final String? longitude;
+  final String? latitude;
+  final String? rate;
+  final List<HotelImageModel>? hotelImages;
+  final List<Facility>? hotelFacilities;
 
   Map<String, dynamic> toJson() => {};
 
@@ -30,7 +39,5 @@ class Hotel extends Equatable {
         latitude,
         longitude,
         rate,
-        images,
-        facilities,
       ];
 }

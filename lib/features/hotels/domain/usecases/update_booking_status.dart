@@ -7,14 +7,14 @@ class UpdateBookingUseCase {
 
   final HotelsRepository hotelsRepository;
 
-  Future<Either<Failure, Unit>> call({
-    required String token,
-    required String status,
-    required int bookingId,
-  }) async {
-    return await hotelsRepository.updateBookingStatus(
-      status: status,
-      bookingId: bookingId,
-    );
-  }
+  // Future<Either<Failure, Unit>> call({
+  //   required String token,
+  //   required String status,
+  //   required int bookingId,
+  // }) async {
+  //   return await hotelsRepository.updateBookingStatus(
+  //     status: status,
+  //     bookingId: bookingId,
+  //   );
+  // }
 }

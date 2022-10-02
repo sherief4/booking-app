@@ -51,7 +51,7 @@ class AppBarBackground extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 40.0,
+          bottom: 16.0,
           left: 16.0,
           child: SizedBox(
             height: 40.0,
